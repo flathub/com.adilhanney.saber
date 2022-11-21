@@ -43,8 +43,8 @@
 			"sources": [
 				{
 					"type": "file",
-					"url": "https://raw.githubusercontent.com/adil192/saber/v0.3.16/flatpak/com.adilhanney.saber.metainfo.xml",
-					"sha256": "08ba883499e549af82da058ce2e68f934f01afe8d26fc73f7802ef453559cc23"
+					"url": "https://raw.githubusercontent.com/adil192/saber/v0.4.0/flatpak/com.adilhanney.saber.metainfo.xml",
+					"sha256": "7943a0489d7462db80587287246e8dba6c0ba943ef9ff38ef79cee6580e3161a"
 				},
 				{
 					"type": "file",
@@ -53,8 +53,8 @@
 				},
 				{
 					"type": "file",
-					"url": "https://github.com/adil192/saber/releases/download/v0.3.16/Saber-Linux-Portable.tar.gz",
-					"sha256": "b84b62418b5c4b3746959ccd0dedadd7866a2bafc2bb9be0f21e1bfc94b95ad7"
+					"url": "https://github.com/adil192/saber/releases/download/v0.4.0/Saber-Linux-Portable.tar.gz",
+					"sha256": "bca2595d772d5df1de03ef177aaf9637aadbda63d54f96f4fe78d075d941d575"
 				},
 				{
 					"type": "file",
