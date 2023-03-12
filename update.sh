@@ -51,8 +51,8 @@ fi
 
 echo -n "2. Finding latest tag and archive... "
 json=$(curl -s https://api.github.com/repos/adil192/saber/releases/latest)
-export LATEST_TAG=$(echo $json | jq -r ".tag_name")
-export ARCHIVE_NAME=$(echo $json | jq -r ".assets[].name" | grep Saber_.*.tar.gz)
+LATEST_TAG=$(echo "$json" | jq -r ".tag_name")
+ARCHIVE_NAME=$(echo "$json" | jq -r ".assets[].name" | grep "Saber_.*.tar.gz")
 echo "Found $LATEST_TAG and $ARCHIVE_NAME"
 
 echo -n "3. Check if json needs updating... "
@@ -68,9 +68,9 @@ else
 fi
 
 echo -n "4. Hashing $ARCHIVE_NAME... "
-curl -L -o $ARCHIVE_NAME https://github.com/adil192/saber/releases/latest/download/$ARCHIVE_NAME
-ARCHIVE_HASH=$(sha256sum $ARCHIVE_NAME | cut -d ' ' -f 1)
-rm $ARCHIVE_NAME
+curl -L -o "$ARCHIVE_NAME" https://github.com/adil192/saber/releases/latest/download/$ARCHIVE_NAME
+ARCHIVE_HASH=$(sha256sum "$ARCHIVE_NAME" | cut -d ' ' -f 1)
+rm "$ARCHIVE_NAME"
 echo "Hashed $ARCHIVE_HASH"
 
 echo -n "5. Hashing com.adilhanney.saber.metainfo.xml"
@@ -93,14 +93,16 @@ if [ $NO_GIT ]; then
   echo "Skipped"
   exit 0
 fi
-git checkout -b update/$LATEST_TAG
+git checkout -b update/"$LATEST_TAG"
 git add com.adilhanney.saber.json
 git commit -m "$LATEST_TAG"
-git push --set-upstream origin update/$LATEST_TAG
+git push --set-upstream origin update/"$LATEST_TAG"
 echo "Done"
 
 echo -n "8. Creating pull request... "
-xdg-open https://github.com/flathub/com.adilhanney.saber/pull/new/update/$LATEST_TAG
-echo "See browser"
+PULL_REQUEST_URL=https://github.com/flathub/com.adilhanney.saber/pull/new/update/"$LATEST_TAG"
+echo "See browser, or click here:"
+echo "    $PULL_REQUEST_URL"
+xdg-open "$PULL_REQUEST_URL"
 
 echo "Done!"
