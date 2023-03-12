@@ -21,13 +21,13 @@ else
 fi
 
 echo -n "4. Hashing $ARCHIVE_NAME... "
-wget https://github.com/adil192/saber/releases/latest/download/$ARCHIVE_NAME
+curl -L -o $ARCHIVE_NAME https://github.com/adil192/saber/releases/latest/download/$ARCHIVE_NAME
 export ARCHIVE_HASH=$(sha256sum $ARCHIVE_NAME | cut -d ' ' -f 1)
 rm $ARCHIVE_NAME
 echo "Hashed $ARCHIVE_HASH"
 
 echo -n "5. Hashing com.adilhanney.saber.metainfo.xml"
-wget https://raw.githubusercontent.com/adil192/saber/$LATEST_TAG/flatpak/com.adilhanney.saber.metainfo.xml
+curl -L -o com.adilhanney.saber.metainfo.xml https://raw.githubusercontent.com/adil192/saber/$LATEST_TAG/flatpak/com.adilhanney.saber.metainfo.xml
 export METAINFO_HASH=$(sha256sum com.adilhanney.saber.metainfo.xml | cut -d ' ' -f 1)
 rm com.adilhanney.saber.metainfo.xml
 echo "Hashed $METAINFO_HASH"
