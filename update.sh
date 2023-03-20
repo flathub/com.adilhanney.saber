@@ -1,7 +1,7 @@
 # Whether or not to skip git commands
 NO_GIT=false
 # Whether or not to check if the json needs updating
-NO_CHECK_NEEDS_UPDATING=true
+NO_CHECK_NEEDS_UPDATING=false
 
 for arg in "$@"; do
   case $arg in
@@ -10,7 +10,7 @@ for arg in "$@"; do
       shift
       ;;
     --no-check)
-      NO_CHECK_NEEDS_UPDATING=false
+      NO_CHECK_NEEDS_UPDATING=true
       shift
       ;;
     --help)
@@ -32,16 +32,16 @@ for arg in "$@"; do
 done
 
 echo "Updating com.adilhanney.saber.json"
-if [ $NO_GIT ]; then
+if [ $NO_GIT == true ]; then
   echo "- Git commands disabled"
 fi
-if [ $NO_CHECK_NEEDS_UPDATING ]; then
+if [ $NO_CHECK_NEEDS_UPDATING == true ]; then
   echo "- Not checking if json needs updating"
 fi
 echo "---------------------------------"
 
 echo -n "1. Make sure we're on the master branch... "
-if [ $NO_GIT ]; then
+if [ $NO_GIT == true ]; then
   echo "Skipped"
 else
   git checkout master
@@ -56,7 +56,7 @@ ARCHIVE_NAME=$(echo "$json" | jq -r ".assets[].name" | grep "Saber_.*.tar.gz")
 echo "Found $LATEST_TAG and $ARCHIVE_NAME"
 
 echo -n "3. Check if json needs updating... "
-if [ $NO_CHECK_NEEDS_UPDATING ]; then
+if [ $NO_CHECK_NEEDS_UPDATING == true ]; then
   echo "Skipped"
 else
   if grep -q "adil192/saber/$LATEST_TAG" com.adilhanney.saber.json; then
@@ -89,7 +89,7 @@ sed -i "s/\"url\": \"https:\/\/github.com\/adil192\/saber\/releases\/download\/v
 echo "Done"
 
 echo -n "7. Committing changes... "
-if [ $NO_GIT ]; then
+if [ $NO_GIT == true ]; then
   echo "Skipped"
   exit 0
 fi
