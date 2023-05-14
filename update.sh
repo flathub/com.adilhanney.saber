@@ -82,10 +82,8 @@ echo "Hashed $METAINFO_HASH"
 echo -n "6. Updating com.adilhanney.saber.json... "
 # com.adilhanney.saber.metainfo.xml
 sed -i "s/\"url\": \"https:\/\/raw.githubusercontent.com\/adil192\/saber\/v[0-9]\+\.[0-9]\+\.[0-9]\+\/flatpak\/com.adilhanney.saber.metainfo.xml\", \"sha256\": \"[a-z0-9]\{64\}\"/\"url\": \"https:\/\/raw.githubusercontent.com\/adil192\/saber\/$LATEST_TAG\/flatpak\/com.adilhanney.saber.metainfo.xml\", \"sha256\": \"$METAINFO_HASH\"/g" com.adilhanney.saber.json
-# Replace Saber-Linux-Portable.tar.gz (old archive name)
-sed -i "s/\"url\": \"https:\/\/github.com\/adil192\/saber\/releases\/download\/v[0-9]\+\.[0-9]\+\.[0-9]\+\/Saber-Linux-Portable.tar.gz\", \"sha256\": \"[a-z0-9]\{64\}\"/\"url\": \"https:\/\/github.com\/adil192\/saber\/releases\/download\/$LATEST_TAG\/$ARCHIVE_NAME\", \"sha256\": \"$ARCHIVE_HASH\"/g" com.adilhanney.saber.json
-# Replace Saber_v0.9.2_9020.tar.gz ($ARCHIVE_NAME)
-sed -i "s/\"url\": \"https:\/\/github.com\/adil192\/saber\/releases\/download\/v[0-9]\+\.[0-9]\+\.[0-9]\+\/Saber_v[0-9]\+\.[0-9]\+\.[0-9]\+_[0-9]\{4,\}\.tar\.gz\", \"sha256\": \"[a-z0-9]\{64\}\"/\"url\": \"https:\/\/github.com\/adil192\/saber\/releases\/download\/$LATEST_TAG\/$ARCHIVE_NAME\", \"sha256\": \"$ARCHIVE_HASH\"/g" com.adilhanney.saber.json
+# Replace Saber_v0.12.5.tar.gz ($ARCHIVE_NAME)
+sed -i "s/\"url\": \"https:\/\/github.com\/adil192\/saber\/releases\/download\/v[0-9]\+\.[0-9]\+\.[0-9]\+\/Saber_v[0-9]\+\.[0-9]\+\.[0-9]\+\.tar\.gz\", \"sha256\": \"[a-z0-9]\{64\}\"/\"url\": \"https:\/\/github.com\/adil192\/saber\/releases\/download\/$LATEST_TAG\/$ARCHIVE_NAME\", \"sha256\": \"$ARCHIVE_HASH\"/g" com.adilhanney.saber.json
 echo "Done"
 
 echo -n "7. Committing changes... "

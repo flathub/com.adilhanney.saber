@@ -70,7 +70,7 @@
 				},
 				{
 					"type": "file",
-					"url": "https://github.com/adil192/saber/releases/download/v0.12.4/Saber_v0.12.4_12040.tar.gz", "sha256": "df81b832031dbb0bbebbf6e4d342da13917eefd72372bd6e38459065fc62b14d"
+					"url": "https://github.com/adil192/saber/releases/download/v0.12.4/Saber_v0.12.4.tar.gz", "sha256": "df81b832031dbb0bbebbf6e4d342da13917eefd72372bd6e38459065fc62b14d"
 				},
 				{
 					"type": "file",
