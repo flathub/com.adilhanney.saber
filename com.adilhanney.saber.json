@@ -61,7 +61,7 @@
 			"sources": [
 				{
 					"type": "file",
-					"url": "https://raw.githubusercontent.com/adil192/saber/v0.14.4/flatpak/com.adilhanney.saber.metainfo.xml", "sha256": "0cad4bc87caa18f524a5ab0ea87ca48b0999e352d9da47f1b33a9e86284cca05"
+					"url": "https://raw.githubusercontent.com/adil192/saber/v0.14.6/flatpak/com.adilhanney.saber.metainfo.xml", "sha256": "b22762b3d7c8f912d1725a4e5a71b044d0d553fdab4cea7eabf679e1a726962d"
 				},
 				{
 					"type": "file",
@@ -70,7 +70,7 @@
 				},
 				{
 					"type": "file",
-					"url": "https://github.com/adil192/saber/releases/download/v0.14.4/Saber_v0.14.4.tar.gz", "sha256": "e3507657a12d7d3e2b9625a9b5988a54c464705e437017875e9b0430afff6c3d"
+					"url": "https://github.com/adil192/saber/releases/download/v0.14.6/Saber_v0.14.6.tar.gz", "sha256": "de283d0a8acf60cff346ed73fc31013fe353d0ac4b9bc667a72f94ee5c1d0d52"
 				},
 				{
 					"type": "file",
