@@ -61,7 +61,7 @@
 			"sources": [
 				{
 					"type": "file",
-					"url": "https://raw.githubusercontent.com/adil192/saber/v0.14.10/flatpak/com.adilhanney.saber.metainfo.xml", "sha256": "997cc3341374356f256362eaa1cbab93982632453de61ceadfe0f183950d684e"
+					"url": "https://raw.githubusercontent.com/adil192/saber/3affab0cf7e695777f859c673077098664ad4c7f/flatpak/com.adilhanney.saber.metainfo.xml", "sha256": "30869d0f098f82a3d385ab1e9123004c164dd119d9253adb97072ee4d363074a"
 				},
 				{
 					"type": "file",
