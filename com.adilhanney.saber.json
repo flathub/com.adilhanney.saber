@@ -37,13 +37,11 @@
 			"build-commands": [
 				"mkdir -p Saber",
 				"tar -xf Saber_*.tar.gz -C Saber",
-
 				"cp -r Saber /app/",
 				"chmod +x /app/Saber/saber",
 				"mkdir -p /app/bin",
 				"ln -s /app/Saber/saber /app/bin/saber",
 				"ln -s /app/Saber/lib/* /app/lib/",
-
 				"install -Dm644 com.adilhanney.saber.metainfo.xml -t /app/share/metainfo/",
 				"install -Dm644 icon-512x512.png /app/share/icons/hicolor/512x512/apps/com.adilhanney.saber.png",
 				"install -Dm644 com.adilhanney.saber.desktop -t /app/share/applications/"
@@ -51,46 +49,46 @@
 			"sources": [
 				{
 					"type": "file",
-					"url": "https://raw.githubusercontent.com/adil192/saber/v0.14.11/flatpak/com.adilhanney.saber.metainfo.xml",
-					"sha256": "2767db1c1f8fabfc35dcc18b8ae47106d27d381676d6674d4af22311a8ef6714",
+					"url": "https://raw.githubusercontent.com/adil192/saber/v0.15.1/flatpak/com.adilhanney.saber.metainfo.xml",
+					"sha256": "f6afc02e573d821301d085eff1d39652fb688bdac9ea2d447643529695c0c0e5",
 					"x-checker-data": {
-					  "type": "json",
-					  "url": "https://api.github.com/repos/adil192/saber/releases/latest",
-					  "version-query": ".tag_name",
-					  "url-query": "$version | \"https://raw.githubusercontent.com/adil192/saber/\" + $version + \"/flatpak/com.adilhanney.saber.metainfo.xml\""
+						"type": "json",
+						"url": "https://api.github.com/repos/adil192/saber/releases/latest",
+						"version-query": ".tag_name",
+						"url-query": "$version | \"https://raw.githubusercontent.com/adil192/saber/\" + $version + \"/flatpak/com.adilhanney.saber.metainfo.xml\""
 					}
 				},
 				{
 					"type": "file",
-					"url": "https://raw.githubusercontent.com/adil192/saber/v0.3.0/flatpak/com.adilhanney.saber.desktop",
-					"sha256": "4725f03a3eee316e4fb79c64ff36c28c80ca104ed7edc1bb3b2ad8e6021a1c79",
+					"url": "https://raw.githubusercontent.com/adil192/saber/v0.15.1/flatpak/com.adilhanney.saber.desktop",
+					"sha256": "ab6f3ef3bf9346d395642fef43354db8ff3a4bfba76df971de3a9d0df32157d4",
 					"x-checker-data": {
-					  "type": "json",
-					  "url": "https://api.github.com/repos/adil192/saber/releases/latest",
-					  "version-query": ".tag_name",
-					  "url-query": "$version | \"https://raw.githubusercontent.com/adil192/saber/\" + $version + \"/flatpak/com.adilhanney.saber.desktop\""
+						"type": "json",
+						"url": "https://api.github.com/repos/adil192/saber/releases/latest",
+						"version-query": ".tag_name",
+						"url-query": "$version | \"https://raw.githubusercontent.com/adil192/saber/\" + $version + \"/flatpak/com.adilhanney.saber.desktop\""
 					}
 				},
 				{
 					"type": "file",
-					"url": "https://github.com/adil192/saber/releases/download/v0.14.11/Saber_v0.14.11.tar.gz",
-					"sha256": "147a2ca19ab2d2d54f5bcd3f36d0f209e5f36d049eb44bd8359dedd089bb76e7",
+					"url": "https://github.com/adil192/saber/releases/download/v0.15.1/Saber_v0.15.1.tar.gz",
+					"sha256": "dcf6b9596f575b91e6acd0d6b17ce724e87f2b812e3dea4628c425a36430639e",
 					"x-checker-data": {
-					  "type": "json",
-					  "url": "https://api.github.com/repos/adil192/saber/releases/latest",
-					  "version-query": ".tag_name",
-					  "url-query": "$version | \"https://github.com/adil192/saber/releases/download/\" + $version + \"/Saber_\" + $version + \".tar.gz\""
+						"type": "json",
+						"url": "https://api.github.com/repos/adil192/saber/releases/latest",
+						"version-query": ".tag_name",
+						"url-query": "$version | \"https://github.com/adil192/saber/releases/download/\" + $version + \"/Saber_\" + $version + \".tar.gz\""
 					}
 				},
 				{
 					"type": "file",
-					"url": "https://raw.githubusercontent.com/adil192/saber/v0.3.0/assets/icon/resized/icon-512x512.png",
+					"url": "https://raw.githubusercontent.com/adil192/saber/v0.15.1/assets/icon/resized/icon-512x512.png",
 					"sha256": "e6601fa4b6a0a8e396ebbb14c115fe1b5177f48e28c2f2732db2d6419ffaab7a",
 					"x-checker-data": {
-					  "type": "json",
-					  "url": "https://api.github.com/repos/adil192/saber/releases/latest",
-					  "version-query": ".tag_name",
-					  "url-query": "$version | \"https://raw.githubusercontent.com/adil192/saber/\" + $version + \"/assets/icon/resized/icon-512x512.png\""
+						"type": "json",
+						"url": "https://api.github.com/repos/adil192/saber/releases/latest",
+						"version-query": ".tag_name",
+						"url-query": "$version | \"https://raw.githubusercontent.com/adil192/saber/\" + $version + \"/assets/icon/resized/icon-512x512.png\""
 					}
 				}
 			]
