@@ -19,6 +19,7 @@
 		{
 			"name": "libjsoncpp",
 			"buildsystem": "meson",
+			"only_arches": ["x86_64"],
 			"config-opts": [
 				"--buildtype=release",
 				"--default-library=shared"
