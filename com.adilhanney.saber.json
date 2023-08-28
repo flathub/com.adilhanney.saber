@@ -19,7 +19,9 @@
 		{
 			"name": "libjsoncpp",
 			"buildsystem": "meson",
-			"only_arches": ["x86_64"],
+			"only_arches": [
+				"x86_64"
+			],
 			"config-opts": [
 				"--buildtype=release",
 				"--default-library=shared"
@@ -50,8 +52,8 @@
 			"sources": [
 				{
 					"type": "file",
-					"url": "https://raw.githubusercontent.com/adil192/saber/v0.15.2/flatpak/com.adilhanney.saber.metainfo.xml",
-					"sha256": "597f39bc6fc98f667ec5f1becbfdac573372e5fc8c2774b352502850a01ce3fe",
+					"url": "https://raw.githubusercontent.com/adil192/saber/v0.15.3/flatpak/com.adilhanney.saber.metainfo.xml",
+					"sha256": "c8e609f3afa61b6d00d3c3c4e6c515d682f067beed7630c8c7bebba22cc190f1",
 					"x-checker-data": {
 						"type": "json",
 						"url": "https://api.github.com/repos/adil192/saber/releases/latest",
@@ -61,7 +63,7 @@
 				},
 				{
 					"type": "file",
-					"url": "https://raw.githubusercontent.com/adil192/saber/v0.15.2/flatpak/com.adilhanney.saber.desktop",
+					"url": "https://raw.githubusercontent.com/adil192/saber/v0.15.3/flatpak/com.adilhanney.saber.desktop",
 					"sha256": "ab6f3ef3bf9346d395642fef43354db8ff3a4bfba76df971de3a9d0df32157d4",
 					"x-checker-data": {
 						"type": "json",
@@ -83,7 +85,7 @@
 				},
 				{
 					"type": "file",
-					"url": "https://raw.githubusercontent.com/adil192/saber/v0.15.2/assets/icon/resized/icon-512x512.png",
+					"url": "https://raw.githubusercontent.com/adil192/saber/v0.15.3/assets/icon/resized/icon-512x512.png",
 					"sha256": "e6601fa4b6a0a8e396ebbb14c115fe1b5177f48e28c2f2732db2d6419ffaab7a",
 					"x-checker-data": {
 						"type": "json",
