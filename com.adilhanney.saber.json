@@ -19,9 +19,6 @@
 		{
 			"name": "libjsoncpp",
 			"buildsystem": "meson",
-			"only_arches": [
-				"x86_64"
-			],
 			"config-opts": [
 				"--buildtype=release",
 				"--default-library=shared"
@@ -38,60 +35,40 @@
 			"name": "saber",
 			"buildsystem": "simple",
 			"build-commands": [
-				"mkdir -p Saber",
-				"tar -xf Saber_*.tar.gz -C Saber",
-				"cp -r Saber /app/",
-				"chmod +x /app/Saber/saber",
+				"mkdir -p /app",
+				"tar -xf Saber_*.tar.gz -C /app",
 				"mkdir -p /app/bin",
-				"ln -s /app/Saber/saber /app/bin/saber",
-				"ln -s /app/Saber/lib/* /app/lib/",
-				"install -Dm644 com.adilhanney.saber.metainfo.xml -t /app/share/metainfo/",
-				"install -Dm644 icon-512x512.png /app/share/icons/hicolor/512x512/apps/com.adilhanney.saber.png",
-				"install -Dm644 com.adilhanney.saber.desktop -t /app/share/applications/"
+				"ln -s /app/saber /app/bin/saber"
 			],
 			"sources": [
 				{
 					"type": "file",
-					"url": "https://raw.githubusercontent.com/adil192/saber/v0.15.3/flatpak/com.adilhanney.saber.metainfo.xml",
-					"sha256": "c8e609f3afa61b6d00d3c3c4e6c515d682f067beed7630c8c7bebba22cc190f1",
+					"url": "https://github.com/adil192/saber/releases/download/v0.5.5/Saber_v0.5.5_Linux_x86_64.tar.gz",
+					"sha256": "84f923c12ed8e65d46ee06c763ebf429c5f3c16686eda0d284c2a8443f77c44b",
+					"only-arches": [
+						"x86_64"
+					],
 					"x-checker-data": {
 						"type": "json",
 						"url": "https://api.github.com/repos/adil192/saber/releases/latest",
 						"version-query": ".tag_name",
-						"url-query": "$version | \"https://raw.githubusercontent.com/adil192/saber/\" + $version + \"/flatpak/com.adilhanney.saber.metainfo.xml\""
+						"url-query": ".assets[] | select(.name==\"Saber_\" + $version + \"_Linux_x86_64.tar.gz\") | .browser_download_url",
+						"is-main-source": true
 					}
 				},
 				{
 					"type": "file",
-					"url": "https://raw.githubusercontent.com/adil192/saber/v0.15.3/flatpak/com.adilhanney.saber.desktop",
-					"sha256": "ab6f3ef3bf9346d395642fef43354db8ff3a4bfba76df971de3a9d0df32157d4",
+					"url": "https://github.com/adil192/saber/releases/download/v0.5.5/Saber_v0.5.5_Linux_arm64.tar.gz",
+					"sha256": "188f729c085e947b754c86dd79403e5b17fe9bf8a7c8c9f1e149bd462df8355a",
+					"only-arches": [
+						"aarch64"
+					],
 					"x-checker-data": {
 						"type": "json",
 						"url": "https://api.github.com/repos/adil192/saber/releases/latest",
 						"version-query": ".tag_name",
-						"url-query": "$version | \"https://raw.githubusercontent.com/adil192/saber/\" + $version + \"/flatpak/com.adilhanney.saber.desktop\""
-					}
-				},
-				{
-					"type": "file",
-					"url": "https://github.com/adil192/saber/releases/download/v0.15.3/Saber_v0.15.3.tar.gz",
-					"sha256": "b2f526d267e41054225bb63facb5c6b7370e8b858e7f4b10b89cde5685fd3f4f",
-					"x-checker-data": {
-						"type": "json",
-						"url": "https://api.github.com/repos/adil192/saber/releases/latest",
-						"version-query": ".tag_name",
-						"url-query": "$version | \"https://github.com/adil192/saber/releases/download/\" + $version + \"/Saber_\" + $version + \".tar.gz\""
-					}
-				},
-				{
-					"type": "file",
-					"url": "https://raw.githubusercontent.com/adil192/saber/v0.15.3/assets/icon/resized/icon-512x512.png",
-					"sha256": "e6601fa4b6a0a8e396ebbb14c115fe1b5177f48e28c2f2732db2d6419ffaab7a",
-					"x-checker-data": {
-						"type": "json",
-						"url": "https://api.github.com/repos/adil192/saber/releases/latest",
-						"version-query": ".tag_name",
-						"url-query": "$version | \"https://raw.githubusercontent.com/adil192/saber/\" + $version + \"/assets/icon/resized/icon-512x512.png\""
+						"url-query": ".assets[] | select(.name==\"Saber_\" + $version + \"_Linux_arm64.tar.gz\") | .browser_download_url",
+						"is-main-source": true
 					}
 				}
 			]
