@@ -43,8 +43,8 @@
 			"sources": [
 				{
 					"type": "file",
-					"url": "https://github.com/adil192/saber/releases/download/v0.5.5/Saber_v0.5.5_Linux_x86_64.tar.gz",
-					"sha256": "84f923c12ed8e65d46ee06c763ebf429c5f3c16686eda0d284c2a8443f77c44b",
+					"url": "https://github.com/adil192/saber/releases/download/v0.15.4/Saber_v0.15.4_Linux_x86_64.tar.gz",
+					"sha256": "fcacf12f8c6e917b7a77168e951239e0c1d3fb16cea362c95b13551e8732cbc6",
 					"only-arches": [
 						"x86_64"
 					],
@@ -58,8 +58,8 @@
 				},
 				{
 					"type": "file",
-					"url": "https://github.com/adil192/saber/releases/download/v0.5.5/Saber_v0.5.5_Linux_arm64.tar.gz",
-					"sha256": "188f729c085e947b754c86dd79403e5b17fe9bf8a7c8c9f1e149bd462df8355a",
+					"url": "https://github.com/adil192/saber/releases/download/v0.15.4/Saber_v0.15.4_Linux_arm64.tar.gz",
+					"sha256": "cd6f13f78370c7f25655af9199b799c5117450f0a38148e0f6f0ac00a03044e9",
 					"only-arches": [
 						"aarch64"
 					],
