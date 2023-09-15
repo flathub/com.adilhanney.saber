@@ -3,5 +3,5 @@
 flatpak run \
   --filesystem=$(pwd) \
   org.flathub.flatpak-external-data-checker \
-  com.adilhanney.ricochlime.json \
+  com.adilhanney.saber.json \
   --update
