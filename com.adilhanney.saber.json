@@ -43,8 +43,8 @@
 			"sources": [
 				{
 					"type": "file",
-					"url": "https://github.com/adil192/saber/releases/download/v0.16.0/Saber_v0.16.0_Linux_x86_64.tar.gz",
-					"sha256": "35c7f7f222dd2a6d040a203b6348247ae980b841df9a40c24782d05ace681dd3",
+					"url": "https://github.com/adil192/saber/releases/download/v0.16.1/Saber_v0.16.1_Linux_x86_64.tar.gz",
+					"sha256": "404d5092f5031b861fe7ce9acadaf9f4cb49a33792116599908eefa9dbf46f94",
 					"only-arches": [
 						"x86_64"
 					],
