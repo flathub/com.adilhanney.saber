@@ -43,8 +43,8 @@
 			"sources": [
 				{
 					"type": "file",
-					"url": "https://github.com/adil192/saber/releases/download/v0.16.0/Saber_v0.16.0_Linux_x86_64.tar.gz",
-					"sha256": "35c7f7f222dd2a6d040a203b6348247ae980b841df9a40c24782d05ace681dd3",
+					"url": "https://github.com/adil192/saber/releases/download/v0.16.1/Saber_v0.16.1_Linux_x86_64.tar.gz",
+					"sha256": "404d5092f5031b861fe7ce9acadaf9f4cb49a33792116599908eefa9dbf46f94",
 					"only-arches": [
 						"x86_64"
 					],
@@ -58,8 +58,8 @@
 				},
 				{
 					"type": "file",
-					"url": "https://github.com/adil192/saber/releases/download/v0.16.0/Saber_v0.16.0_Linux_arm64.tar.gz",
-					"sha256": "99ef725f6767549b772665aaebb169f9e4282df0faa206fa7e9c5fe6afa67ff5",
+					"url": "https://github.com/adil192/saber/releases/download/v0.16.1/Saber_v0.16.1_Linux_arm64.tar.gz",
+					"sha256": "803bd546b1b7f77c4f3e419cfaa3da2eba6657f69b0c389ea4e436cc083df82a",
 					"only-arches": [
 						"aarch64"
 					],
