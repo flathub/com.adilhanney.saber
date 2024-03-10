@@ -43,8 +43,8 @@
 			"sources": [
 				{
 					"type": "file",
-					"url": "https://github.com/saber-notes/saber/releases/download/v0.21.0/Saber_v0.21.0_Linux_x86_64.tar.gz",
-					"sha256": "f009f9163a241883863c3cf0a00f8638671d4e48955db152e6679a63cf5272f5",
+					"url": "https://github.com/saber-notes/saber/releases/download/v0.21.1/Saber_v0.21.1_Linux_x86_64.tar.gz",
+					"sha256": "004535dc5662d294ad51c22e08518becf7acdd52acde57f78c168bd661e0d21a",
 					"only-arches": [
 						"x86_64"
 					],
@@ -58,8 +58,8 @@
 				},
 				{
 					"type": "file",
-					"url": "https://github.com/saber-notes/saber/releases/download/v0.21.0/Saber_v0.21.0_Linux_arm64.tar.gz",
-					"sha256": "62c172759ca85c974c10590f3ae4f8ef369ebfe1bdb675f51d6d3716e1716a29",
+					"url": "https://github.com/saber-notes/saber/releases/download/v0.21.1/Saber_v0.21.1_Linux_arm64.tar.gz",
+					"sha256": "c48e95c7712e0c289b47353e55671519da8af4b89612ce9c6e6e76132b765dbc",
 					"only-arches": [
 						"aarch64"
 					],
