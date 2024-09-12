@@ -26,8 +26,15 @@
 			"sources": [
 				{
 					"type": "archive",
-					"url": "https://github.com/open-source-parsers/jsoncpp/archive/refs/tags/1.9.6.tar.gz",
-					"sha256": "f93b6dd7ce796b13d02c108bc9f79812245a82e577581c4c9aabe57075c90ea2"
+					"url": "https://api.github.com/repos/open-source-parsers/jsoncpp/tarball/1.9.6",
+					"sha256": "21d360092e9c4cb7c4c200d7827c72cf99eaf766114f162fcca5442d997e23d6",
+					"x-checker-data": {
+						"type": "json",
+						"url": "https://api.github.com/repos/open-source-parsers/jsoncpp/releases/latest",
+						"version-query": ".tag_name",
+						"url-query": ".tarball_url",
+						"is-main-source": false
+					}
 				}
 			]
 		},
