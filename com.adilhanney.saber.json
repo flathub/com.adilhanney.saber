@@ -39,6 +39,27 @@
 			]
 		},
 		{
+			"name": "webkit2gtk-4.1",
+			"buildsystem": "cmake-ninja",
+			"config-opts": [
+				"-DPORT=GTK"
+			],
+			"sources": [
+				{
+					"type": "archive",
+					"url": "https://webkitgtk.org/releases/webkitgtk-2.46.2.tar.xz",
+					"sha256": "5aae1c5c0a30d5e9c5831652b6f1bdefc31d75e0ad81cb40185b0aed92ce79b6",
+					"x-checker-data": {
+						"type": "html",
+						"url": "https://webkitgtk.org/releases/",
+						"version-query": "LATEST-STABLE-(\\d[\\.\\d]+\\d)",
+						"url-query": "https://webkitgtk.org/releases/webkitgtk-$version.tar.xz",
+						"is-main-source": false
+					}
+				}
+			]
+		},
+		{
 			"name": "saber",
 			"buildsystem": "simple",
 			"build-commands": [
