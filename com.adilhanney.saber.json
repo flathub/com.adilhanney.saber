@@ -1,8 +1,8 @@
 {
 	"app-id": "com.adilhanney.saber",
-	"runtime": "org.freedesktop.Platform",
-	"runtime-version": "24.08",
-	"sdk": "org.freedesktop.Sdk",
+	"runtime": "org.gnome.Platform",
+	"runtime-version": "46",
+	"sdk": "org.gnome.Sdk",
 	"command": "saber",
 	"separate-locales": false,
 	"finish-args": [
@@ -33,51 +33,6 @@
 						"url": "https://api.github.com/repos/open-source-parsers/jsoncpp/releases/latest",
 						"version-query": ".tag_name",
 						"url-query": ".tag_name | \"https://github.com/open-source-parsers/jsoncpp/archive/refs/tags/\" + . + \".tar.gz\"",
-						"is-main-source": false
-					}
-				}
-			]
-		},
-        {
-            "name": "unifdef",
-            "no-autogen": true,
-            "make-install-args": [
-                "prefix=${FLATPAK_DEST}"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://dotat.at/prog/unifdef/unifdef-2.12.tar.xz",
-                    "sha256": "43ce0f02ecdcdc723b2475575563ddb192e988c886d368260bc0a63aee3ac400",
-					"x-checker-data": {
-						"type": "html",
-						"url": "https://dotat.at/prog/unifdef/",
-						"version-query": "unifdef-(\\d[\\.\\d]+\\d).tar.xz",
-						"url-query": "https://dotat.at/prog/unifdef/unifdef-$version.tar.xz",
-						"is-main-source": false
-					}
-                }
-            ],
-            "cleanup": [
-                "*"
-            ]
-        },
-		{
-			"name": "webkit2gtk-4.1",
-			"buildsystem": "cmake-ninja",
-			"config-opts": [
-				"-DPORT=GTK"
-			],
-			"sources": [
-				{
-					"type": "archive",
-					"url": "https://webkitgtk.org/releases/webkitgtk-2.46.2.tar.xz",
-					"sha256": "5aae1c5c0a30d5e9c5831652b6f1bdefc31d75e0ad81cb40185b0aed92ce79b6",
-					"x-checker-data": {
-						"type": "html",
-						"url": "https://webkitgtk.org/releases/",
-						"version-query": "LATEST-STABLE-(\\d[\\.\\d]+\\d)",
-						"url-query": "https://webkitgtk.org/releases/webkitgtk-$version.tar.xz",
 						"is-main-source": false
 					}
 				}
