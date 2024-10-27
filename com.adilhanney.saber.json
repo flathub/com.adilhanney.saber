@@ -38,6 +38,30 @@
 				}
 			]
 		},
+        {
+            "name": "unifdef",
+            "no-autogen": true,
+            "make-install-args": [
+                "prefix=${FLATPAK_DEST}"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://dotat.at/prog/unifdef/unifdef-2.12.tar.xz",
+                    "sha256": "43ce0f02ecdcdc723b2475575563ddb192e988c886d368260bc0a63aee3ac400",
+					"x-checker-data": {
+						"type": "html",
+						"url": "https://dotat.at/prog/unifdef/",
+						"version-query": "unifdef-(\\d[\\.\\d]+\\d).tar.xz",
+						"url-query": "https://dotat.at/prog/unifdef/unifdef-$version.tar.xz",
+						"is-main-source": false
+					}
+                }
+            ],
+            "cleanup": [
+                "*"
+            ]
+        },
 		{
 			"name": "webkit2gtk-4.1",
 			"buildsystem": "cmake-ninja",
