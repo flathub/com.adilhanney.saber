@@ -39,6 +39,25 @@
 			]
 		},
 		{
+			"name": "zenity",
+			"buildsystem": "meson",
+			"config-opts": [
+				"--buildtype=release"
+			],
+			"sources": [
+				{
+					"type": "git",
+					"url": "https://gitlab.gnome.org/GNOME/zenity",
+					"commit": "49f057727f9c215a32397ceb9a7c2782eb4ef474",
+					"tag": "4.1.90",
+					"x-checker-data": {
+						"type": "git",
+						"tag-pattern": "^([\\d.]+)$"
+					}
+				}
+			]
+		},
+		{
 			"name": "saber",
 			"buildsystem": "simple",
 			"build-commands": [
