@@ -48,8 +48,8 @@
 				{
 					"type": "git",
 					"url": "https://gitlab.gnome.org/GNOME/zenity",
-					"commit": "49f057727f9c215a32397ceb9a7c2782eb4ef474",
-					"tag": "4.1.90",
+					"commit": "bb585782da4a6c991e5782be451826bae92d0757",
+					"tag": "4.1.99",
 					"x-checker-data": {
 						"type": "git",
 						"tag-pattern": "^([\\d.]+)$"
@@ -69,8 +69,8 @@
 			"sources": [
 				{
 					"type": "file",
-					"url": "https://github.com/saber-notes/saber/releases/download/v0.25.9/Saber_v0.25.9_Linux_x86_64.tar.gz",
-					"sha256": "64f43a723ecbfb0e538f8670632b903b5e426788ee509583042e4b1065f14cca",
+					"url": "https://github.com/saber-notes/saber/releases/download/v0.26.1/Saber_v0.26.1_Linux_x86_64.tar.gz",
+					"sha256": "b1a20e533a1ecf1ec32d01317d4f496e056f65d2ff5defb5c06c3c4e8ee99f3a",
 					"only-arches": [
 						"x86_64"
 					],
@@ -84,8 +84,8 @@
 				},
 				{
 					"type": "file",
-					"url": "https://github.com/saber-notes/saber/releases/download/v0.25.9/Saber_v0.25.9_Linux_arm64.tar.gz",
-					"sha256": "c343f886da74a43d30fd0e75236c4b4c6f79314cf236acfb72d81c2c9801493f",
+					"url": "https://github.com/saber-notes/saber/releases/download/v0.26.1/Saber_v0.26.1_Linux_arm64.tar.gz",
+					"sha256": "9c6c8dd8405a83d933715b076ddc5dd8997a005fcc89649e304bbff2cadbe413",
 					"only-arches": [
 						"aarch64"
 					],
