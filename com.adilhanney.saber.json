@@ -61,41 +61,26 @@
 			"name": "saber",
 			"buildsystem": "simple",
 			"build-commands": [
+				"ls -la",
 				"mkdir -p /app",
-				"tar -xf Saber_*.tar.gz -C /app",
+				"pushd saber",
+				"flutter build linux",
+				"cp -r build/linux/x64/release/bundle/* /app",
+				"popd",
 				"mkdir -p /app/bin",
 				"ln -s /app/saber /app/bin/saber"
 			],
 			"sources": [
 				{
-					"type": "file",
-					"url": "https://github.com/saber-notes/saber/releases/download/v0.26.3/Saber_v0.26.3_Linux_x86_64.tar.gz",
-					"sha256": "4d0490aec32d992e817ae4f7b1b627a4e3b1bca7e00f04f060da3fdcc6763c15",
-					"only-arches": [
-						"x86_64"
-					],
-					"x-checker-data": {
-						"type": "json",
-						"url": "https://api.github.com/repos/saber-notes/saber/releases/latest",
-						"version-query": ".tag_name",
-						"url-query": ".assets[] | select(.name==\"Saber_\" + $version + \"_Linux_x86_64.tar.gz\") | .browser_download_url",
-						"is-main-source": true
-					}
+					"type": "archive",
+					"url": "https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.35.1-stable.tar.xz",
+					"sha256": "58efd9d1e570a1bf976e218cfbbcca3f23b21b873d765a74e045d5b9022ab515"
 				},
 				{
-					"type": "file",
-					"url": "https://github.com/saber-notes/saber/releases/download/v0.26.3/Saber_v0.26.3_Linux_arm64.tar.gz",
-					"sha256": "3bd2eaf54472818cdc79c8bc39a8a41c51fccd1d1ef2479f48d9e2346c628467",
-					"only-arches": [
-						"aarch64"
-					],
-					"x-checker-data": {
-						"type": "json",
-						"url": "https://api.github.com/repos/saber-notes/saber/releases/latest",
-						"version-query": ".tag_name",
-						"url-query": ".assets[] | select(.name==\"Saber_\" + $version + \"_Linux_arm64.tar.gz\") | .browser_download_url",
-						"is-main-source": true
-					}
+					"type": "git",
+					"url": "https://github.com/saber-notes/saber",
+					"tag": "v0.26.3",
+					"commit": "6054d4d6014a70d867775f22f0ed59fa96c99d3c"
 				}
 			]
 		}
