@@ -61,11 +61,8 @@
 			"name": "saber",
 			"buildsystem": "simple",
 			"build-commands": [
-				"mkdir -p /app",
-				"./submodules/flutter/bin/flutter build linux --offline",
-				"cp -r build/linux/x64/release/bundle/* /app",
-				"mkdir -p /app/bin",
-				"ln -s /app/saber /app/bin/saber"
+				"chmod +x build-saber.sh",
+				"./build-saber.sh"
 			],
 			"sources": [
 				{
@@ -78,6 +75,15 @@
 					"url": "https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.35.1-stable.tar.xz",
 					"sha256": "58efd9d1e570a1bf976e218cfbbcca3f23b21b873d765a74e045d5b9022ab515",
 					"dest": "submodules/flutter"
+				},
+				{
+					"type": "archive",
+					"path": "pub-cache.zip",
+					"dest": ".pub-cache"
+				},
+				{
+					"type": "file",
+					"path": "build-saber.sh"
 				}
 			]
 		}
