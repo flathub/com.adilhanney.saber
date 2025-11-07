@@ -11,7 +11,6 @@
 		"--socket=fallback-x11",
 		"--socket=wayland",
 		"--device=dri",
-		"--socket=pulseaudio",
 		"--filesystem=xdg-documents/Saber:create"
 	],
 	"modules": [
@@ -48,8 +47,8 @@
 				{
 					"type": "git",
 					"url": "https://gitlab.gnome.org/GNOME/zenity",
-					"commit": "12b561a47e9becb62a2c26c23ec2b3a6709e6024",
-					"tag": "4.2.0",
+					"commit": "54c0b49e5d56de276bad1a2280b7fba500b05e97",
+					"tag": "4.2.1",
 					"x-checker-data": {
 						"type": "git",
 						"tag-pattern": "^([\\d.]+)$"
@@ -69,8 +68,8 @@
 			"sources": [
 				{
 					"type": "file",
-					"url": "https://github.com/saber-notes/saber/releases/download/v1.27.1/Saber_v1.27.1_Linux_x86_64.tar.gz",
-					"sha256": "1efd4a96b6b1a7772481fc40309e236f2c2825e4eb01cdf7c3261c3e35ab825f",
+					"url": "https://github.com/saber-notes/saber/releases/download/v1.27.2/Saber_v1.27.2_Linux_x86_64.tar.gz",
+					"sha256": "47bbc8a0d80ca7f3b72e3136e752df5bf6661361f560163c50f9fed358957e79",
 					"only-arches": [
 						"x86_64"
 					],
@@ -84,8 +83,8 @@
 				},
 				{
 					"type": "file",
-					"url": "https://github.com/saber-notes/saber/releases/download/v1.27.1/Saber_v1.27.1_Linux_arm64.tar.gz",
-					"sha256": "6b9548c88098520f57e2b80afdce95e98b41764ae2afc76cb499061c16c827a0",
+					"url": "https://github.com/saber-notes/saber/releases/download/v1.27.2/Saber_v1.27.2_Linux_arm64.tar.gz",
+					"sha256": "bfb2ba41a647a6be0f2c5b02b91e3a2a4bd2b0239833e0d3b70ce1f693b1abc0",
 					"only-arches": [
 						"aarch64"
 					],
