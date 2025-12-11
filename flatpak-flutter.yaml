@@ -1,0 +1,83 @@
+app-id: com.adilhanney.saber
+runtime: org.gnome.Platform
+runtime-version: '48'
+sdk: org.gnome.Sdk
+sdk-extensions:
+  - org.freedesktop.Sdk.Extension.llvm20
+command: saber
+separate-locales: false
+finish-args:
+  - --share=network
+  - --share=ipc
+  - --socket=fallback-x11
+  - --socket=wayland
+  - --device=dri
+  - --filesystem=xdg-documents/Saber:create
+modules:
+  - shared-modules/libsecret/libsecret.json
+  - name: libjsoncpp
+    buildsystem: meson
+    config-opts:
+      - --buildtype=release
+      - --default-library=shared
+    sources:
+      - type: archive
+        url: https://github.com/open-source-parsers/jsoncpp/archive/refs/tags/1.9.6.tar.gz
+        sha256: f93b6dd7ce796b13d02c108bc9f79812245a82e577581c4c9aabe57075c90ea2
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/open-source-parsers/jsoncpp/releases/latest
+          version-query: .tag_name
+          url-query: .tag_name | "https://github.com/open-source-parsers/jsoncpp/archive/refs/tags/" + . + ".tar.gz",
+          is-main-source: false
+  - name: zenity
+    buildsystem: meson
+    config-opts:
+      - --buildtype=release
+    sources:
+      - type: git
+        url: https://gitlab.gnome.org/GNOME/zenity.git
+        tag: 4.2.1
+        commit: 54c0b49e5d56de276bad1a2280b7fba500b05e97
+        x-checker-data:
+          type: git
+          tag-pattern: ^([\d.]+)$
+  - name: saber
+    buildsystem: simple
+    build-options:
+      arch:
+        x86_64:
+          env:
+            BUNDLE_PATH: build/linux/x64/release/bundle
+        aarch64:
+          env:
+            BUNDLE_PATH: build/linux/arm64/release/bundle
+      append-path: /usr/lib/sdk/llvm20/bin:/run/build/saber/flutter/bin
+      prepend-ld-library-path: /usr/lib/sdk/llvm20/lib
+      env:
+        PUB_CACHE: /run/build/saber/.pub-cache
+    build-commands:
+      - ./patches/remove_proprietary_dependencies.sh
+      - flutter config --no-cli-animations
+      - ./patches/remove_dev_dependencies.sh
+      - flutter build linux --no-pub
+      - cp -a ${BUNDLE_PATH}/. /app/bin/
+      - install -Dm644 flatpak/com.adilhanney.saber.desktop -t /app/share/applications/
+      - install -Dm644 flatpak/com.adilhanney.saber.metainfo.xml -t /app/share/metainfo/
+      - install -Dm644 assets/icon/icon_linux.svg /app/share/icons/hicolor/scalable/apps/com.adilhanney.saber.svg
+    sources:
+      - type: git
+        url: https://github.com/saber-notes/saber.git
+        tag: v1.29.0
+        commit: c99c73ca94c92cfd31b92c59f0a4789a60156690
+        x-checker-data:
+          type: git
+          tag-pattern: ^v([\d.]+)$
+      # Hopefully we will be able to use `submodules/flutter` in the future
+      # but for now we have to clone manually to `./flutter`:
+      # https://github.com/TheAppgineer/flatpak-flutter/issues/74
+      - type: git
+        url: https://github.com/flutter/flutter.git
+        tag: 3.38.4
+        commit: 66dd93f9a27ffe2a9bfc8297506ce066ff51265f
+        dest: flutter

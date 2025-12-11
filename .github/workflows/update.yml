@@ -1,0 +1,79 @@
+name: Update app
+
+on:
+  workflow_dispatch:
+  schedule:
+    # weekly at 7:02 (random time to avoid spikes in GitHub Actions usage)
+    - cron: "2 7 * * 1"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update-app:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+      - name: Set up Flatpak
+        run: |
+          flatpak remote-add --if-not-exists --user flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+          flatpak install flathub org.flathub.flatpak-external-data-checker org.freedesktop.Platform//25.08 org.freedesktop.Sdk//25.08 org.freedesktop.Sdk.Extension.llvm20//25.08 -y
+
+      # Update saber's tag
+      - name: Get PREVIOUS_APP_VERSION
+        run: |
+          PREVIOUS_APP_VERSION=$(./scripts/get-app-version.sh)
+          echo "PREVIOUS_APP_VERSION=$PREVIOUS_APP_VERSION" >> $GITHUB_ENV
+      - name: Update app version
+        run: flatpak run org.flathub.flatpak-external-data-checker flatpak-flutter.yaml --edit
+      - name: Get APP_VERSION
+        run: |
+          APP_VERSION=$(./scripts/get-app-version.sh)
+          echo "APP_VERSION=$APP_VERSION" >> $GITHUB_ENV
+          APP_COMMIT=$(./scripts/get-app-commit.sh)
+          echo "APP_COMMIT=$APP_COMMIT" >> $GITHUB_ENV
+      - name: Validate APP_VERSION
+        run: |
+          # Since we're using this in the pull request inputs, ensure it's not malicious or malformed
+          if ! [[ "$APP_VERSION" =~ ^v[0-9]+(\.[0-9]+)*$ ]]; then
+            echo "APP_VERSION '$APP_VERSION' is not a valid version number"
+            exit 1
+          fi
+      - name: Compare versions
+        id: update_found
+        run: |
+          if [ "$PREVIOUS_APP_VERSION" = "$APP_VERSION" ]; then
+            echo "update_found=false" >> $GITHUB_OUTPUT
+          else
+            echo "update_found=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Download app source
+        if: steps.update_found.outputs.update_found == 'true'
+        uses: actions/checkout@v6
+        with:
+          repository: saber-notes/saber
+          path: saber
+          ref: ${{ env.APP_COMMIT }}
+
+      - name: Update flutter version
+        if: steps.update_found.outputs.update_found == 'true'
+        run: ./scripts/update-flutter.sh
+
+      - name: Update pub.dev dependencies
+        if: steps.update_found.outputs.update_found == 'true'
+        run: ./scripts/update-manifest.sh
+
+      - name: Create Pull Request
+        if: steps.update_found.outputs.update_found == 'true'
+        uses: peter-evans/create-pull-request@v7
+        env:
+          SUMMARY: "Update Saber to ${{ env.APP_VERSION }}"
+        with:
+          title: ${{ env.SUMMARY }}
+          commit-message: ${{ env.SUMMARY }}
+          branch: "update/saber/${{ env.APP_VERSION }}"
+          body: "This PR updates Saber from ${{ env.PREVIOUS_APP_VERSION }} to ${{ env.APP_VERSION }}."
+          assignees: adil192
