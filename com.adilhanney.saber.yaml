@@ -78,6 +78,37 @@ modules:
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
+      - type: archive
+        only-arches:
+          - x86_64
+        url: https://github.com/bblanchon/pdfium-binaries/releases/download/chromium%2F7520/pdfium-linux-x64.tgz
+        sha256: e737634cca16ba28b760077b915b469bea076b71f208769c56fb96ee138e876f
+        dest: ./build/linux/x64/release/pdfium/chromium%2F7520/
+        strip-components: 0
+      - type: archive
+        only-arches:
+          - aarch64
+        url: https://github.com/bblanchon/pdfium-binaries/releases/download/chromium%2F7520/pdfium-linux-arm64.tgz
+        sha256: ee3998f311195bf9cecb3936b2ce3dd621e873277c36f1ca05de36f2646c07d4
+        dest: ./build/linux/arm64/release/pdfium/chromium%2F7520/
+        strip-components: 0
+      - type: archive
+        only-arches:
+          - x86_64
+        url: https://github.com/bblanchon/pdfium-binaries/releases/download/chromium%2F7520/pdfium-linux-x64.tgz
+        sha256: e737634cca16ba28b760077b915b469bea076b71f208769c56fb96ee138e876f
+        dest: ./build/linux/x64/release/pdfium-src/
+        strip-components: 0
+      - type: archive
+        only-arches:
+          - aarch64
+        url: https://github.com/bblanchon/pdfium-binaries/releases/download/chromium%2F7520/pdfium-linux-arm64.tgz
+        sha256: ee3998f311195bf9cecb3936b2ce3dd621e873277c36f1ca05de36f2646c07d4
+        dest: ./build/linux/arm64/release/pdfium-src/
+        strip-components: 0
+      - type: patch
+        path: printing/5.14.2-CMakeLists.txt.patch
+        dest: .pub-cache/hosted/pub.dev/printing-5.14.2
       - type: patch
         path: cargokit/run_build_tool.sh.patch
         dest: .pub-cache/hosted/pub.dev/super_native_extensions-0.9.1/cargokit
