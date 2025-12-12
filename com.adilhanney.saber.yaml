@@ -1,0 +1,120 @@
+# Generated from flatpak-flutter.yaml, do not edit
+# Visit the flatpak-flutter project at https://github.com/TheAppgineer/flatpak-flutter
+app-id: com.adilhanney.saber
+runtime: org.gnome.Platform
+runtime-version: '48'
+sdk: org.gnome.Sdk
+sdk-extensions:
+  - org.freedesktop.Sdk.Extension.llvm20
+command: saber
+separate-locales: false
+finish-args:
+  - --share=network
+  - --share=ipc
+  - --socket=fallback-x11
+  - --socket=wayland
+  - --device=dri
+  - --filesystem=xdg-documents/Saber:create
+modules:
+  - shared-modules/libsecret/libsecret.json
+  - name: libjsoncpp
+    buildsystem: meson
+    config-opts:
+      - --buildtype=release
+      - --default-library=shared
+    sources:
+      - type: archive
+        url: https://github.com/open-source-parsers/jsoncpp/archive/refs/tags/1.9.6.tar.gz
+        sha256: f93b6dd7ce796b13d02c108bc9f79812245a82e577581c4c9aabe57075c90ea2
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/open-source-parsers/jsoncpp/releases/latest
+          version-query: .tag_name
+          url-query: .tag_name | "https://github.com/open-source-parsers/jsoncpp/archive/refs/tags/"
+            + . + ".tar.gz",
+          is-main-source: false
+  - name: zenity
+    buildsystem: meson
+    config-opts:
+      - --buildtype=release
+    sources:
+      - type: git
+        url: https://gitlab.gnome.org/GNOME/zenity.git
+        tag: 4.2.1
+        commit: 54c0b49e5d56de276bad1a2280b7fba500b05e97
+        x-checker-data:
+          type: git
+          tag-pattern: ^([\d.]+)$
+  - name: saber
+    buildsystem: simple
+    build-options:
+      arch:
+        x86_64:
+          env:
+            BUNDLE_PATH: build/linux/x64/release/bundle
+        aarch64:
+          env:
+            BUNDLE_PATH: build/linux/arm64/release/bundle
+      append-path: /usr/lib/sdk/llvm20/bin:/var/lib/rustup/bin:/var/lib/flutter/bin
+      prepend-ld-library-path: /usr/lib/sdk/llvm20/lib
+      env:
+        PUB_CACHE: /run/build/saber/.pub-cache
+        CARGO_HOME: /run/build/saber/cargo
+        RUSTUP_HOME: /var/lib/rustup
+    build-commands:
+      - ./patches/remove_proprietary_dependencies.sh
+      - setup-flutter.sh -C .
+      - flutter config --no-cli-animations
+      - ./patches/remove_dev_dependencies.sh
+      - flutter build linux --no-pub
+      - cp -a ${BUNDLE_PATH}/. /app/bin/
+      - install -Dm644 flatpak/com.adilhanney.saber.desktop -t /app/share/applications/
+      - install -Dm644 flatpak/com.adilhanney.saber.metainfo.xml -t /app/share/metainfo/
+      - install -Dm644 assets/icon/icon_linux.svg /app/share/icons/hicolor/scalable/apps/com.adilhanney.saber.svg
+    sources:
+      - pubspec-sources.json
+      - type: git
+        url: https://github.com/saber-notes/saber.git
+        tag: v1.29.0
+        commit: c99c73ca94c92cfd31b92c59f0a4789a60156690
+        x-checker-data:
+          type: git
+          tag-pattern: ^v([\d.]+)$
+      - type: archive
+        only-arches:
+          - x86_64
+        url: https://github.com/bblanchon/pdfium-binaries/releases/download/chromium%2F7520/pdfium-linux-x64.tgz
+        sha256: e737634cca16ba28b760077b915b469bea076b71f208769c56fb96ee138e876f
+        dest: ./build/linux/x64/release/pdfium/chromium%2F7520/
+        strip-components: 0
+      - type: archive
+        only-arches:
+          - aarch64
+        url: https://github.com/bblanchon/pdfium-binaries/releases/download/chromium%2F7520/pdfium-linux-arm64.tgz
+        sha256: ee3998f311195bf9cecb3936b2ce3dd621e873277c36f1ca05de36f2646c07d4
+        dest: ./build/linux/arm64/release/pdfium/chromium%2F7520/
+        strip-components: 0
+      - type: archive
+        only-arches:
+          - x86_64
+        url: https://github.com/bblanchon/pdfium-binaries/releases/download/chromium%2F7520/pdfium-linux-x64.tgz
+        sha256: e737634cca16ba28b760077b915b469bea076b71f208769c56fb96ee138e876f
+        dest: ./build/linux/x64/release/pdfium-src/
+        strip-components: 0
+      - type: archive
+        only-arches:
+          - aarch64
+        url: https://github.com/bblanchon/pdfium-binaries/releases/download/chromium%2F7520/pdfium-linux-arm64.tgz
+        sha256: ee3998f311195bf9cecb3936b2ce3dd621e873277c36f1ca05de36f2646c07d4
+        dest: ./build/linux/arm64/release/pdfium-src/
+        strip-components: 0
+      - type: patch
+        path: printing/5.14.2-CMakeLists.txt.patch
+        dest: .pub-cache/hosted/pub.dev/printing-5.14.2
+      - type: patch
+        path: cargokit/run_build_tool.sh.patch
+        dest: .pub-cache/hosted/pub.dev/super_native_extensions-0.9.1/cargokit
+      - cargo-sources.json
+    modules:
+      - rustup-1.91.1.json
+      - flutter-sdk-3.38.4.json
