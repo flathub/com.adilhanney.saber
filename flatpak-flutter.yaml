@@ -81,3 +81,5 @@ modules:
         tag: 3.38.4
         commit: 66dd93f9a27ffe2a9bfc8297506ce066ff51265f
         dest: flutter
+    modules:
+      - rustup-1.91.1.json
