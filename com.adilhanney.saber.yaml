@@ -16,7 +16,6 @@ finish-args:
   - --device=dri
   - --filesystem=xdg-documents/Saber:create
 modules:
-  - shared-modules/libsecret/libsecret.json
   - name: libjsoncpp
     buildsystem: meson
     config-opts:
