@@ -70,8 +70,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/saber-notes/saber.git
-        tag: v1.29.0
-        commit: c99c73ca94c92cfd31b92c59f0a4789a60156690
+        tag: v1.29.1
+        commit: 8e5d44dbede2948695663971a288c5a17defd35e
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
@@ -80,8 +80,8 @@ modules:
       # https://github.com/TheAppgineer/flatpak-flutter/issues/74
       - type: git
         url: https://github.com/flutter/flutter.git
-        tag: 3.38.4
-        commit: 66dd93f9a27ffe2a9bfc8297506ce066ff51265f
+        tag: 3.38.5
+        commit: f6ff1529fd6d8af5f706051d9251ac9231c83407
         dest: flutter
     modules:
       - rustup-1.91.1.json
