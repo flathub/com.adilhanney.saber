@@ -1,0 +1,17 @@
+{
+  "search.exclude": {
+    "**/.flatpak-builder": true,
+    "**/build": true
+  },
+  "files.exclude": {
+    "repo": true,
+    ".flatpak-builder/.cache": true,
+    ".flatpak-builder/.config": true,
+    ".flatpak-builder/cache": true,
+    ".flatpak-builder/ccache": true,
+    ".flatpak-builder/checksums": true,
+    ".flatpak-builder/downloads": true,
+    ".flatpak-builder/git": true,
+    ".flatpak-builder/rofiles": true
+  }
+}
