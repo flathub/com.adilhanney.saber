@@ -75,8 +75,8 @@ modules:
       - pubspec-sources.json
       - type: git
         url: https://github.com/saber-notes/saber.git
-        tag: v1.29.0
-        commit: c99c73ca94c92cfd31b92c59f0a4789a60156690
+        tag: v1.29.1
+        commit: 8e5d44dbede2948695663971a288c5a17defd35e
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
