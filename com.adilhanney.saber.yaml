@@ -31,7 +31,7 @@ modules:
           url: https://api.github.com/repos/open-source-parsers/jsoncpp/releases/latest
           version-query: .tag_name
           url-query: .tag_name | "https://github.com/open-source-parsers/jsoncpp/archive/refs/tags/"
-            + . + ".tar.gz",
+            + . + ".tar.gz"
           is-main-source: false
   - name: zenity
     buildsystem: meson
