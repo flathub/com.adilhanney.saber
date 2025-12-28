@@ -28,8 +28,7 @@ modules:
           type: json
           url: https://api.github.com/repos/open-source-parsers/jsoncpp/releases/latest
           version-query: .tag_name
-          url-query: .tag_name | "https://github.com/open-source-parsers/jsoncpp/archive/refs/tags/"
-            + . + ".tar.gz"
+          url-query: .tag_name | "https://github.com/open-source-parsers/jsoncpp/archive/refs/tags/" + . + ".tar.gz"
           is-main-source: false
   - name: zenity
     buildsystem: meson
@@ -71,10 +70,10 @@ modules:
     sources:
       - type: git
         url: https://github.com/saber-notes/saber.git
-        tag: v1.29.1
-        commit: 8e5d44dbede2948695663971a288c5a17defd35e
+        tag: v1.29.2+1
+        commit: a092537af6ab7b467534a404594b0535142e149d
         x-checker-data:
           type: git
-          tag-pattern: ^v([\d.]+)$
+          tag-pattern: ^v([\d.]+(?:\+.*)?)$
     modules:
       - rustup-1.91.1.json
