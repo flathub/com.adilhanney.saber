@@ -70,10 +70,10 @@ modules:
     sources:
       - type: git
         url: https://github.com/saber-notes/saber.git
-        tag: v1.29.2
+        tag: v1.29.2+1
         commit: a092537af6ab7b467534a404594b0535142e149d
         x-checker-data:
           type: git
-          tag-pattern: ^v([\d.]+)$
+          tag-pattern: ^v([\d.]+(?:\+.*)?)$
     modules:
       - rustup-1.91.1.json

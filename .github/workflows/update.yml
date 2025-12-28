@@ -37,7 +37,7 @@ jobs:
       - name: Validate APP_VERSION
         run: |
           # Since we're using this in the pull request inputs, ensure it's not malicious or malformed
-          if ! [[ "$APP_VERSION" =~ ^v[0-9]+(\.[0-9]+)*$ ]]; then
+          if ! [[ "$APP_VERSION" =~ ^v[0-9]+(\.[0-9]+)*(\+[0-9A-Za-z]+)?$ ]]; then
             echo "APP_VERSION '$APP_VERSION' is not a valid version number"
             exit 1
           fi
