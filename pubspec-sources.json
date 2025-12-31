@@ -142,16 +142,16 @@
     {
         "type": "archive",
         "archive-type": "tar-gzip",
-        "url": "https://pub.dev/api/archives/background_downloader-9.4.3.tar.gz",
-        "sha256": "2d17c211eb9bf1f947f154fb85d1bea96944fb1efb1b0714851caac993c02dc8",
+        "url": "https://pub.dev/api/archives/background_downloader-9.4.4.tar.gz",
+        "sha256": "e800c946df0bb6c73849716c25f54b7a0c94e8dccd02504cbd860a1742f970ef",
         "strip-components": 0,
-        "dest": ".pub-cache/hosted/pub.dev/background_downloader-9.4.3"
+        "dest": ".pub-cache/hosted/pub.dev/background_downloader-9.4.4"
     },
     {
         "type": "inline",
-        "contents": "2d17c211eb9bf1f947f154fb85d1bea96944fb1efb1b0714851caac993c02dc8",
+        "contents": "e800c946df0bb6c73849716c25f54b7a0c94e8dccd02504cbd860a1742f970ef",
         "dest": ".pub-cache/hosted-hashes/pub.dev",
-        "dest-filename": "background_downloader-9.4.3.sha256"
+        "dest-filename": "background_downloader-9.4.4.sha256"
     },
     {
         "type": "archive",
