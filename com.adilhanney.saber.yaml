@@ -82,6 +82,5 @@ modules:
       - generated/sources/cargo.json
       - generated/sources/pubspec.json
     modules:
-      - rustup-1.92.0.json
       - generated/modules/rustup-1.92.0.json
       - generated/modules/flutter-sdk-3.38.6.json

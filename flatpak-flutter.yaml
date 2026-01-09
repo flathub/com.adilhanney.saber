@@ -76,4 +76,4 @@ modules:
           type: git
           tag-pattern: ^v([\d.]+(?:\+.*)?)$
     modules:
-      - rustup-1.92.0.json
+      - generated/modules/rustup-1.92.0.json
