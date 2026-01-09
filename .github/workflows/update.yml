@@ -26,13 +26,13 @@ jobs:
       # Update saber's tag
       - name: Get PREVIOUS_APP_VERSION
         run: |
-          PREVIOUS_APP_VERSION=$(./scripts/get-app-version.sh)
+          PREVIOUS_APP_VERSION=$(./.github/scripts/get-app-version.sh)
           echo "PREVIOUS_APP_VERSION=$PREVIOUS_APP_VERSION" >> $GITHUB_ENV
       - name: Update app version
         run: flatpak run org.flathub.flatpak-external-data-checker flatpak-flutter.yaml --edit
       - name: Get APP_VERSION
         run: |
-          APP_VERSION=$(./scripts/get-app-version.sh)
+          APP_VERSION=$(./.github/scripts/get-app-version.sh)
           echo "APP_VERSION=$APP_VERSION" >> $GITHUB_ENV
       - name: Validate APP_VERSION
         run: |
@@ -58,13 +58,9 @@ jobs:
           path: saber
           ref: ${{ env.APP_VERSION }}
 
-      - name: Update flutter version
+      - name: Update build manifest
         if: steps.update_found.outputs.update_found == 'true'
-        run: ./scripts/update-flutter.sh
-
-      - name: Update pub.dev dependencies
-        if: steps.update_found.outputs.update_found == 'true'
-        run: ./scripts/update-manifest.sh
+        run: ./.github/scripts/update-manifest.sh
 
       - name: Create Pull Request
         if: steps.update_found.outputs.update_found == 'true'
