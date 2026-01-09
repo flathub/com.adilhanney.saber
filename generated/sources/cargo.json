@@ -1087,12 +1087,12 @@
     {
         "type": "shell",
         "commands": [
-            "cp -rf --reflink=auto \"flatpak-cargo/git/mime_guess-8c9abd3/.\" \"cargo/vendor/mime_guess-8c9abd3\""
+            "cp -rfL --reflink=auto \"flatpak-cargo/git/mime_guess-8c9abd3/.\" \"cargo/vendor/mime_guess-8c9abd3\""
         ]
     },
     {
         "type": "inline",
-        "contents": "[[example]]\nname = \"rev_map\"\nrequired-features = [ \"rev-mappings\",]\n\n[[bench]]\nname = \"benchmark\"\nharness = false\n\n[package]\nname = \"mime_guess\"\nversion = \"2.0.4\"\nauthors = [ \"Austin Bonander <austin.bonander@gmail.com>\",]\nlicense = \"MIT\"\ndescription = \"A simple crate for detection of a file's MIME type by its extension.\"\nkeywords = [ \"mime\", \"filesystem\", \"extension\",]\nrepository = \"https://github.com/abonander/mime_guess\"\ndocumentation = \"https://docs.rs/mime_guess/\"\nreadme = \"README.md\"\n\n[features]\ndefault = [ \"rev-mappings\",]\nrev-mappings = []\n\n[dependencies]\nmime = \"0.3\"\nunicase = \"2.4.0\"\n\n[build-dependencies]\nunicase = \"2.4.0\"\n\n[dev-dependencies]\ncriterion = \"0.3\"\n",
+        "contents": "[package]\nname = \"mime_guess\"\nversion = \"2.0.4\"\nauthors = [\"Austin Bonander <austin.bonander@gmail.com>\"]\nlicense = \"MIT\"\ndescription = \"A simple crate for detection of a file's MIME type by its extension.\"\nkeywords = [\"mime\", \"filesystem\", \"extension\"]\nrepository = \"https://github.com/abonander/mime_guess\"\ndocumentation = \"https://docs.rs/mime_guess/\"\nreadme = \"README.md\"\n\n[features]\ndefault = [\"rev-mappings\"]\nrev-mappings = []\n\n[dependencies]\nmime = \"0.3\"\nunicase = \"2.4.0\"\n\n[build-dependencies]\nunicase = \"2.4.0\"\n\n[dev-dependencies]\ncriterion = \"0.3\"\n\n[[example]]\nname = \"rev_map\"\nrequired-features = [\"rev-mappings\"]\n\n[[bench]]\nname = \"benchmark\"\nharness = false\n",
         "dest": "cargo/vendor/mime_guess-8c9abd3",
         "dest-filename": "Cargo.toml"
     },
@@ -2679,6 +2679,6 @@
         "type": "inline",
         "contents": "[source.vendored-sources]\ndirectory = \"cargo/vendor\"\n\n[source.crates-io]\nreplace-with = \"vendored-sources\"\n\n[source.\"https://github.com/knopp/mime_guess?branch=super_native_extensions#8c9abd3\"]\ngit = \"https://github.com/knopp/mime_guess\"\nreplace-with = \"vendored-sources\"\nbranch = \"super_native_extensions\"\n",
         "dest": "cargo",
-        "dest-filename": "config"
+        "dest-filename": "config.toml"
     }
 ]
