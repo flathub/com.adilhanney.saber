@@ -50,14 +50,6 @@ jobs:
             echo "update_found=true" >> $GITHUB_OUTPUT
           fi
 
-      - name: Download app source
-        if: steps.update_found.outputs.update_found == 'true'
-        uses: actions/checkout@v6
-        with:
-          repository: saber-notes/saber
-          path: saber
-          ref: ${{ env.APP_VERSION }}
-
       - name: Update build manifest
         if: steps.update_found.outputs.update_found == 'true'
         run: ./.github/scripts/update-manifest.sh
