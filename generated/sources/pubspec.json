@@ -2701,32 +2701,31 @@
         "dest-filename": "simplytranslate-2.2.2.sha256"
     },
     {
+        "type": "git",
+        "url": "https://github.com/adil192/slang",
+        "commit": "949a16664259005d7ac8df853ea5a6ef3b0e4380",
+        "dest": ".pub-cache/git/slang-949a16664259005d7ac8df853ea5a6ef3b0e4380"
+    },
+    {
+        "type": "shell",
+        "commands": [
+            "mkdir -p .pub-cache/git/cache/slang-ab81ea76bacd9480d95ea06bf16f29b0049fe7d2",
+            "cp -rf .pub-cache/git/slang-949a16664259005d7ac8df853ea5a6ef3b0e4380/.git/* .pub-cache/git/cache/slang-ab81ea76bacd9480d95ea06bf16f29b0049fe7d2"
+        ]
+    },
+    {
         "type": "archive",
         "archive-type": "tar-gzip",
-        "url": "https://pub.dev/api/archives/slang-4.11.1.tar.gz",
-        "sha256": "263159a93864a13a0f2486326e200cb38214a8e82a3c83a48c20ac24a8eed329",
+        "url": "https://pub.dev/api/archives/slang_flutter-4.12.0.tar.gz",
+        "sha256": "0a4545cca5404d6b7487cf61cf1fe56c52daeb08de56a7574ee8381fbad035a0",
         "strip-components": 0,
-        "dest": ".pub-cache/hosted/pub.dev/slang-4.11.1"
+        "dest": ".pub-cache/hosted/pub.dev/slang_flutter-4.12.0"
     },
     {
         "type": "inline",
-        "contents": "263159a93864a13a0f2486326e200cb38214a8e82a3c83a48c20ac24a8eed329",
+        "contents": "0a4545cca5404d6b7487cf61cf1fe56c52daeb08de56a7574ee8381fbad035a0",
         "dest": ".pub-cache/hosted-hashes/pub.dev",
-        "dest-filename": "slang-4.11.1.sha256"
-    },
-    {
-        "type": "archive",
-        "archive-type": "tar-gzip",
-        "url": "https://pub.dev/api/archives/slang_flutter-4.11.0.tar.gz",
-        "sha256": "a6ebc0a855faa62053f44d333ae3b3cde24945357e88506d1d3e7fb0d3fc0c70",
-        "strip-components": 0,
-        "dest": ".pub-cache/hosted/pub.dev/slang_flutter-4.11.0"
-    },
-    {
-        "type": "inline",
-        "contents": "a6ebc0a855faa62053f44d333ae3b3cde24945357e88506d1d3e7fb0d3fc0c70",
-        "dest": ".pub-cache/hosted-hashes/pub.dev",
-        "dest-filename": "slang_flutter-4.11.0.sha256"
+        "dest-filename": "slang_flutter-4.12.0.sha256"
     },
     {
         "type": "archive",

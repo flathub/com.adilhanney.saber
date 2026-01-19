@@ -59,9 +59,10 @@ modules:
         CARGO_HOME: /run/build/saber/cargo
         RUSTUP_HOME: /var/lib/rustup
     build-commands:
-      - ./patches/remove_proprietary_dependencies.sh
+      - ./patches/pre/remove_dev_dependencies.sh
+      - ./patches/pre/remove_proprietary_dependencies.sh
       - flutter config --no-cli-animations
-      - ./patches/remove_dev_dependencies.sh
+      - ./patches/post/remove_wasm_libs.sh
       - flutter build linux --no-pub
       - cp -a ${BUNDLE_PATH}/. /app/bin/
       - install -Dm644 flatpak/com.adilhanney.saber.desktop -t /app/share/applications/
@@ -70,8 +71,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/saber-notes/saber.git
-        tag: v1.29.4
-        commit: fbe6f359a6cdcb3afedae80ccf9d7fc0b82c9130
+        tag: v1.29.5
+        commit: 7e912ac68098307fa32f5475a3c1a3eb3b6b87fa
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+(?:\+.*)?)$
