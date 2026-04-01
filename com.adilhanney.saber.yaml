@@ -76,8 +76,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/saber-notes/saber.git
-        tag: v1.32.0+1
-        commit: 872c6fb8ac9cca300bea0a3f95311cd5fb56e8dd
+        tag: v1.33.0
+        commit: 4b9103e29d90e8cfa7f67164b36249553705c035
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+(?:\+.*)?)$
@@ -85,4 +85,4 @@ modules:
       - generated/sources/pubspec.json
     modules:
       - generated/modules/rustup-1.94.0.json
-      - generated/modules/flutter-sdk-3.41.5.json
+      - generated/modules/flutter-sdk-3.41.6.json
