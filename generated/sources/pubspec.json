@@ -2788,20 +2788,6 @@
     {
         "type": "archive",
         "archive-type": "tar-gzip",
-        "url": "https://pub.dev/api/archives/simplytranslate-2.2.2.tar.gz",
-        "sha256": "3137b221b088c589cd68d26192d753a3a6fe314b83d95fc9c96cd0a40b270772",
-        "strip-components": 0,
-        "dest": ".pub-cache/hosted/pub.dev/simplytranslate-2.2.2"
-    },
-    {
-        "type": "inline",
-        "contents": "3137b221b088c589cd68d26192d753a3a6fe314b83d95fc9c96cd0a40b270772",
-        "dest": ".pub-cache/hosted-hashes/pub.dev",
-        "dest-filename": "simplytranslate-2.2.2.sha256"
-    },
-    {
-        "type": "archive",
-        "archive-type": "tar-gzip",
         "url": "https://pub.dev/api/archives/slang-4.14.0.tar.gz",
         "sha256": "ea6702ed6b1c82065fb2de906fe34ac9298117342e3c2ea2567132efdc81bd17",
         "strip-components": 0,
