@@ -15,6 +15,10 @@ finish-args:
   - --talk-name=org.freedesktop.secrets
   - --filesystem=xdg-documents/Saber:create
   - --filesystem=xdg-config/kdeglobals:ro
+cleanup:
+  - /include
+  - /lib/cmake
+  - /lib/pkgconfig
 modules:
   - name: libjsoncpp
     buildsystem: meson
@@ -31,11 +35,14 @@ modules:
           version-query: .tag_name
           url-query: .tag_name | "https://github.com/open-source-parsers/jsoncpp/archive/refs/tags/"
             + . + ".tar.gz"
-          is-main-source: false
   - name: zenity
     buildsystem: meson
     config-opts:
-      - --buildtype=release
+      - -Dbuildtype=release
+      - -Dmanpage=false
+    cleanup:
+      - /share/applications
+      - /share/help
     sources:
       - type: git
         url: https://gitlab.gnome.org/GNOME/zenity.git
@@ -78,5 +85,6 @@ modules:
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+(?:\+.*)?)$
+          is-main-source: true
     modules:
       - generated/modules/rustup-1.94.0.json
