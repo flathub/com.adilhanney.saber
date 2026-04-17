@@ -21,7 +21,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y flatpak
           flatpak remote-add --if-not-exists --user flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-          flatpak install flathub org.flathub.flatpak-external-data-checker org.gnome.Platform//25.08 org.gnome.Sdk//50 org.freedesktop.Sdk.Extension.llvm20//25.08 -y
+          flatpak install flathub org.flathub.flatpak-external-data-checker org.gnome.Platform//50 org.gnome.Sdk//50 org.freedesktop.Sdk.Extension.llvm20//25.08 -y
 
       # Update saber's tag
       - name: Get PREVIOUS_APP_VERSION
