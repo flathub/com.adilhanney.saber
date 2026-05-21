@@ -80,8 +80,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/saber-notes/saber.git
-        tag: v1.33.3
-        commit: c2ba9f519294471373bdd11e96ad67b11de563b6
+        tag: v1.34.0
+        commit: c625c2770992b9fe5f69a8e6109e8d68b6919d19
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+(?:\+.*)?)$
