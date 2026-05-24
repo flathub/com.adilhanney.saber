@@ -45,7 +45,7 @@ modules:
       - /share/help
     sources:
       - type: git
-        url: https://gitlab.gnome.org/GNOME/zenity.git
+        url: https://github.com/GNOME/zenity.git
         tag: 4.2.2
         commit: c0f30c18e55b6a0cf5c2deb1c7449debb79027dc
         x-checker-data:
