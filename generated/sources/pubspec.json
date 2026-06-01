@@ -994,18 +994,17 @@
         "dest-filename": "flutter_sharing_intent-2.0.4.sha256"
     },
     {
-        "type": "archive",
-        "archive-type": "tar-gzip",
-        "url": "https://pub.dev/api/archives/flutter_speed_dial-7.0.0.tar.gz",
-        "sha256": "698a037274a66dbae8697c265440e6acb6ab6cae9ac5f95c749e7944d8f28d41",
-        "strip-components": 0,
-        "dest": ".pub-cache/hosted/pub.dev/flutter_speed_dial-7.0.0"
+        "type": "git",
+        "url": "https://github.com/adil192/flutter_speed_dial.git",
+        "commit": "272a4949ac52438969c7a73db575cfa551f88f66",
+        "dest": ".pub-cache/git/flutter_speed_dial-272a4949ac52438969c7a73db575cfa551f88f66"
     },
     {
-        "type": "inline",
-        "contents": "698a037274a66dbae8697c265440e6acb6ab6cae9ac5f95c749e7944d8f28d41",
-        "dest": ".pub-cache/hosted-hashes/pub.dev",
-        "dest-filename": "flutter_speed_dial-7.0.0.sha256"
+        "type": "shell",
+        "commands": [
+            "mkdir -p .pub-cache/git/cache/flutter_speed_dial-362db60d1a2b68394231d9bc53cf3c0239f27dee",
+            "cp -rf .pub-cache/git/flutter_speed_dial-272a4949ac52438969c7a73db575cfa551f88f66/.git/* .pub-cache/git/cache/flutter_speed_dial-362db60d1a2b68394231d9bc53cf3c0239f27dee"
+        ]
     },
     {
         "type": "archive",
@@ -1976,16 +1975,16 @@
     {
         "type": "archive",
         "archive-type": "tar-gzip",
-        "url": "https://pub.dev/api/archives/pdfium_dart-0.2.2.tar.gz",
-        "sha256": "38602496f0c152df618ffe08c8bf983a8d73881f31a1b54a6da01140c3a4e342",
+        "url": "https://pub.dev/api/archives/pdfium_dart-0.2.3.tar.gz",
+        "sha256": "07bba420737d88913773aacbaa3dd40b42d6119967816130fc381fbed8f34c92",
         "strip-components": 0,
-        "dest": ".pub-cache/hosted/pub.dev/pdfium_dart-0.2.2"
+        "dest": ".pub-cache/hosted/pub.dev/pdfium_dart-0.2.3"
     },
     {
         "type": "inline",
-        "contents": "38602496f0c152df618ffe08c8bf983a8d73881f31a1b54a6da01140c3a4e342",
+        "contents": "07bba420737d88913773aacbaa3dd40b42d6119967816130fc381fbed8f34c92",
         "dest": ".pub-cache/hosted-hashes/pub.dev",
-        "dest-filename": "pdfium_dart-0.2.2.sha256"
+        "dest-filename": "pdfium_dart-0.2.3.sha256"
     },
     {
         "type": "archive",
@@ -2004,16 +2003,16 @@
     {
         "type": "archive",
         "archive-type": "tar-gzip",
-        "url": "https://pub.dev/api/archives/pdfrx-2.4.1.tar.gz",
-        "sha256": "e32e1b6f32e92e3c144dec3e389f1dca989f5f28c3a1886fb114a50cf7db863c",
+        "url": "https://pub.dev/api/archives/pdfrx-2.4.2.tar.gz",
+        "sha256": "d20b2826add5f26dbb0ee44d4828aafd255388c8a3d84b1e7f4d4dee00371ecd",
         "strip-components": 0,
-        "dest": ".pub-cache/hosted/pub.dev/pdfrx-2.4.1"
+        "dest": ".pub-cache/hosted/pub.dev/pdfrx-2.4.2"
     },
     {
         "type": "inline",
-        "contents": "e32e1b6f32e92e3c144dec3e389f1dca989f5f28c3a1886fb114a50cf7db863c",
+        "contents": "d20b2826add5f26dbb0ee44d4828aafd255388c8a3d84b1e7f4d4dee00371ecd",
         "dest": ".pub-cache/hosted-hashes/pub.dev",
-        "dest-filename": "pdfrx-2.4.1.sha256"
+        "dest-filename": "pdfrx-2.4.2.sha256"
     },
     {
         "type": "archive",
@@ -5170,18 +5169,20 @@
         "only-arches": [
             "x86_64"
         ],
-        "url": "https://github.com/bblanchon/pdfium-binaries/releases/download/chromium%2F7811/pdfium-linux-x64.tgz",
-        "sha256": "e76e0a37aefb843d56f04657475ce612157021b1ebc53d801f2fbfcc537ccf64",
-        "dest": "./.dart_tool/hooks_runner/shared/pdfium_dart/build/chromium_7811/x64/"
+        "url": "https://github.com/bblanchon/pdfium-binaries/releases/download/chromium%2F7520/pdfium-linux-x64.tgz",
+        "sha256": "e737634cca16ba28b760077b915b469bea076b71f208769c56fb96ee138e876f",
+        "dest": "./build/linux/x64/release/pdfium/chromium%2F7520/",
+        "strip-components": 0
     },
     {
         "type": "archive",
         "only-arches": [
             "aarch64"
         ],
-        "url": "https://github.com/bblanchon/pdfium-binaries/releases/download/chromium%2F7811/pdfium-linux-arm64.tgz",
-        "sha256": "1682079aae24d73fcfb4f1ae115dd7b661780ad31ad43c8804da2d518dc546e8",
-        "dest": "./.dart_tool/hooks_runner/shared/pdfium_dart/build/chromium_7811/arm64/"
+        "url": "https://github.com/bblanchon/pdfium-binaries/releases/download/chromium%2F7520/pdfium-linux-arm64.tgz",
+        "sha256": "ee3998f311195bf9cecb3936b2ce3dd621e873277c36f1ca05de36f2646c07d4",
+        "dest": "./build/linux/arm64/release/pdfium/chromium%2F7520/",
+        "strip-components": 0
     },
     {
         "type": "archive",
