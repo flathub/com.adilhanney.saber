@@ -71,7 +71,6 @@ modules:
       - ./patches/pre/remove_dev_dependencies.sh
       - ./patches/pre/remove_proprietary_dependencies.sh
       - flutter config --no-cli-animations
-      - ./patches/post/remove_wasm_libs.sh
       - flutter build linux --no-pub
       - cp -a ${BUNDLE_PATH}/. /app/bin/
       - install -Dm644 flatpak/com.adilhanney.saber.desktop -t /app/share/applications/
