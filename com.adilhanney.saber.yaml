@@ -74,7 +74,6 @@ modules:
       - ./patches/pre/remove_proprietary_dependencies.sh
       - setup-flutter.sh
       - flutter config --no-cli-animations
-      - ./patches/post/remove_wasm_libs.sh
       - flutter build linux --no-pub
       - cp -a ${BUNDLE_PATH}/. /app/bin/
       - install -Dm644 flatpak/com.adilhanney.saber.desktop -t /app/share/applications/
@@ -83,8 +82,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/saber-notes/saber.git
-        tag: v1.34.1
-        commit: 3f73ffa26da4b2953ba447af48e0bee5fcf66474
+        tag: v1.34.2
+        commit: f78ab04a9a0a82577130a28fbb47d8c5ba4be8c5
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+(?:\+.*)?)$
@@ -92,5 +91,5 @@ modules:
       - generated/sources/cargo.json
       - generated/sources/pubspec.json
     modules:
-      - generated/modules/rustup-1.95.0.json
-      - generated/modules/flutter-sdk-3.44.0.json
+      - generated/modules/rustup-1.96.0.json
+      - generated/modules/flutter-sdk-3.44.1.json
