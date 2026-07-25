@@ -50,6 +50,23 @@ jobs:
             echo "update_found=true" >> $GITHUB_OUTPUT
           fi
 
+      - name: Remove old generated manifests
+        if: steps.update_found.outputs.update_found == 'true'
+        run: rm -rf generated
+
+      - name: Sync Rust version with upstream
+        if: steps.update_found.outputs.update_found == 'true'
+        run: |
+          git clone https://github.com/saber-notes/saber .flatpak-builder/build/saber-999
+          git -C .flatpak-builder/build/saber-999 reset --hard "$APP_VERSION"
+
+          RUST_VERSION=$(cat .flatpak-builder/build/saber-999/rust-toolchain.toml | grep 'channel =' | cut -d'"' -f2)
+          echo "RUST_VERSION=$RUST_VERSION"
+
+          sed -i "s|- generated/modules/rustup-.*.json|- generated/modules/rustup-${RUST_VERSION}.json|g" flatpak-flutter.yaml
+
+          rm -rf .flatpak-builder/build/saber-999
+
       - name: Update build manifest
         if: steps.update_found.outputs.update_found == 'true'
         run: ./.github/scripts/update-manifest.sh
