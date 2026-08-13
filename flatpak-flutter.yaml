@@ -69,6 +69,7 @@ modules:
         RUSTUP_HOME: /var/lib/rustup
     build-commands:
       - ./patches/pre/remove_dev_dependencies.sh
+      - ./patches/pre/remove_permission_handler.sh
       - ./patches/pre/remove_proprietary_dependencies.sh
       - flutter config --no-cli-animations
       - flutter build linux --no-pub
@@ -80,8 +81,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/saber-notes/saber.git
-        tag: v1.35.0
-        commit: b8bdb8085c62cd04519aa4d3b80636057bbde985
+        tag: v1.35.1+1
+        commit: 34c57e51fb97ad23b781d7f681beaa821746b8ef
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+(?:\+.*)?)$
