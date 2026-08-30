@@ -68,7 +68,6 @@ modules:
         CARGO_HOME: /run/build/saber/cargo
         RUSTUP_HOME: /var/lib/rustup
     build-commands:
-      - ./patches/pre/remove_dev_dependencies.sh
       - ./patches/pre/remove_permission_handler.sh
       - ./patches/pre/remove_proprietary_dependencies.sh
       - flutter config --no-cli-animations
@@ -81,8 +80,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/saber-notes/saber.git
-        tag: v1.36.0
-        commit: 4fe625a4a82403e908cc2598c83aa1fd010c94c5
+        tag: v1.36.1
+        commit: a5540f8ee5e5261d52e85bf46e246f98b2395855
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+(?:\+.*)?)$
