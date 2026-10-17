@@ -56,7 +56,7 @@ jobs:
 
       - name: Update build manifest
         if: steps.update_found.outputs.update_found == 'true'
-        run: ./.github/scripts/update-manifest.sh
+        run: docker run --rm --pull=always -v "$PWD":/usr/src/flatpak -u `id -u`:`id -g` theappgineer/flatpak-flutter:latest flatpak-flutter.yaml
 
       - name: Create Pull Request
         if: steps.update_found.outputs.update_found == 'true'
