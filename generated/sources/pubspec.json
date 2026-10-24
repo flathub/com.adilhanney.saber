@@ -646,20 +646,6 @@
     {
         "type": "archive",
         "archive-type": "tar-gzip",
-        "url": "https://pub.dev/api/archives/fast_image_resizer-0.0.2.tar.gz",
-        "sha256": "fc63778efab052f3e5f242c80eab1b72ee4753001678e27420050d4d1941564d",
-        "strip-components": 0,
-        "dest": ".pub-cache/hosted/pub.dev/fast_image_resizer-0.0.2"
-    },
-    {
-        "type": "inline",
-        "contents": "fc63778efab052f3e5f242c80eab1b72ee4753001678e27420050d4d1941564d",
-        "dest": ".pub-cache/hosted-hashes/pub.dev",
-        "dest-filename": "fast_image_resizer-0.0.2.sha256"
-    },
-    {
-        "type": "archive",
-        "archive-type": "tar-gzip",
         "url": "https://pub.dev/api/archives/ffi-2.2.0.tar.gz",
         "sha256": "6d7fd89431262d8f3125e81b50d3847a091d846eafcd4fdb88dd06f36d705a45",
         "strip-components": 0,
