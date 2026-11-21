@@ -1,9 +1,9 @@
 app-id: com.adilhanney.saber
 runtime: org.gnome.Platform
-runtime-version: '50'
+runtime-version: '51'
 sdk: org.gnome.Sdk
 sdk-extensions:
-  - org.freedesktop.Sdk.Extension.llvm20
+  - org.freedesktop.Sdk.Extension.llvm23
 command: saber
 separate-locales: false
 finish-args:
@@ -61,8 +61,8 @@ modules:
         aarch64:
           env:
             BUNDLE_PATH: build/linux/arm64/release/bundle
-      append-path: /usr/lib/sdk/llvm20/bin:/var/lib/rustup/bin:/run/build/saber/submodules/flutter/bin
-      prepend-ld-library-path: /usr/lib/sdk/llvm20/lib
+      append-path: /usr/lib/sdk/llvm23/bin:/var/lib/rustup/bin:/run/build/saber/submodules/flutter/bin
+      prepend-ld-library-path: /usr/lib/sdk/llvm23/lib
       env:
         PUB_CACHE: /run/build/saber/.pub-cache
         CARGO_HOME: /run/build/saber/cargo
